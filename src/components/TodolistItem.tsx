@@ -5,9 +5,10 @@ type Props = {
     title: string
     date?: string
     tasks: Task[]
+    deleteTask?: (taskID: number) => void
 }
 
-export const TodolistItem = ({title, date, tasks}: Props) => {
+export const TodolistItem = ({title, date, tasks, deleteTask}: Props) => {
 
     return (
         <div>
@@ -24,6 +25,7 @@ export const TodolistItem = ({title, date, tasks}: Props) => {
                             <li key={crypto.randomUUID()}>
                                 <input type="checkbox" checked={task.isDone}/>
                                 <span>{task.title}</span>
+                                <button onClick={()=>deleteTask(task.id)}>xxx</button>
                             </li>
                         )
                     })}
