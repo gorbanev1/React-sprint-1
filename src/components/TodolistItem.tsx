@@ -25,7 +25,7 @@ export const TodolistItem = ({title, date, tasks, deleteTask}: Props) => {
                             <li key={crypto.randomUUID()}>
                                 <input type="checkbox" checked={task.isDone}/>
                                 <span>{task.title}</span>
-                                <button onClick={()=>deleteTask(task.id)}>xxx</button>
+                                <Button title={"-"} onClick={()=>deleteTask(task.id)}/>
                             </li>
                         )
                     })}
