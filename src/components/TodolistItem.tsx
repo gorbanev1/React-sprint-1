@@ -1,4 +1,4 @@
-import {Task} from "../App";
+import {FilterValues, Task} from "../App";
 import {Button} from "./Button";
 
 type Props = {
@@ -6,9 +6,10 @@ type Props = {
     date?: string
     tasks: Task[]
     deleteTask?: (taskID: number) => void
+    changeFilter: (filter:FilterValues)=>void
 }
 
-export const TodolistItem = ({title, date, tasks, deleteTask}: Props) => {
+export const TodolistItem = ({title, date, tasks, deleteTask, changeFilter}: Props) => {
 
     return (
         <div>
@@ -33,9 +34,9 @@ export const TodolistItem = ({title, date, tasks, deleteTask}: Props) => {
             )}
 
             <div>
-                <Button title={"All"}/>
-                <Button title={"Active"}/>
-                <Button title={"Completed"}/>
+                <Button title={"All"} onClick={()=>changeFilter('all')}/>
+                <Button title={"Active"} onClick={()=>changeFilter('active')}/>
+                <Button title={"Completed"} onClick={()=>changeFilter('completed')}/>
             </div>
             <div>{date}</div>
         </div>
