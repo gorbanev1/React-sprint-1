@@ -44,8 +44,9 @@ console.log(tasks)
         setTasks([])
         console.log(tasks)
     }
-    const createTask = (title)=>{
-        const newTask = {id: v1(), title, isDone: false}
+
+    const createTask = (taskTitle)=>{
+        const newTask = {id: v1(), title:taskTitle, isDone: false}
         const newTasks = [newTask, ...tasks]
         setTasks(newTasks)
     }
@@ -58,6 +59,8 @@ console.log(tasks)
                       changeFilter={changeFilter}
                       deleteAllTasks={deleteAllTasks}
                       createTask={createTask}
+                    /*  taskTitle={taskTitle}
+                      setTaskTitle={setTaskTitle}*/
         />
 
       </div>
